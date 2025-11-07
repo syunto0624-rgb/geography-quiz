@@ -33,6 +33,10 @@
 4. 正解・不正解の結果を確認
 5. 次の問題へ進む
 
+## URLs
+- **Sandbox**: https://3000-itxxigx22y48mtxupbnmr-b9b802c4.sandbox.novita.ai
+- **GitHub**: https://github.com/syunto0624-rgb/geography-quiz
+
 ## デプロイ
 - **プラットフォーム**: Cloudflare Pages
 - **状態**: 開発中
