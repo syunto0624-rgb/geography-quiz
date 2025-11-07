@@ -1,21 +1,46 @@
-```txt
-npm install
-npm run dev
-```
+# 都道府県クイズ
 
-```txt
-npm run deploy
-```
+## プロジェクト概要
+- **名前**: 都道府県クイズ
+- **目標**: 都市名や名産品から都道府県を当てるクイズゲーム
+- **機能**: 
+  - 47都道府県のクイズデータ
+  - 都市名、名産品などの4つのヒント表示
+  - 難易度選択（かんたん、ふつう、むずかしい）
+  - 正解数・不正解数・正答率の統計表示
+  - レスポンシブデザイン
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
+## 完成した機能
+- ✅ クイズデータベース（全47都道府県）
+- ✅ ランダムクイズ取得API
+- ✅ 難易度フィルター機能
+- ✅ リアルタイム統計表示
+- ✅ アニメーション効果
+- ✅ レスポンシブUI
 
-```txt
-npm run cf-typegen
-```
+## API エンドポイント
+- `GET /api/quiz/random?difficulty={all|easy|medium|hard}` - ランダムなクイズを取得
+- `GET /api/prefectures` - 全都道府県リストを取得
 
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
+## データ構造
+- **クイズデータ**: 都道府県名、4つのヒント（都市名、名産品など）、難易度
+- **統計データ**: 正解数、不正解数、正答率
 
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
+## 使い方
+1. 難易度を選択（デフォルト: すべて）
+2. 表示される4つのヒントを見る
+3. 都道府県名を入力して回答
+4. 正解・不正解の結果を確認
+5. 次の問題へ進む
+
+## デプロイ
+- **プラットフォーム**: Cloudflare Pages
+- **状態**: 開発中
+- **技術スタック**: Hono + TypeScript + Tailwind CSS
+- **最終更新**: 2025-11-07
+
+## ローカル開発
+```bash
+npm run build
+pm2 start ecosystem.config.cjs
 ```
